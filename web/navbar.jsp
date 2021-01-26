@@ -20,7 +20,7 @@
                     <a class="nav-link active" aria-current="page" href="#contacto"><ion-icon name="call-outline"></ion-icon> Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <form action="Categorías" method="POST">
+                    <form action="Categorias" method="POST">
                         <input type="hidden" value="<%=user%>" name="user" id="user">
                         <button type="submit" class="btn btn-link text-dark"><ion-icon name="pricetags-outline"></ion-icon> Compras</button>
                     </form>
