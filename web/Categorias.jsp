@@ -17,8 +17,7 @@
     </head>
     <body>
         <%@include file="navbar.jsp" %>
-        <%            
-            List<Categoria> lstcat = (List<Categoria>) request.getAttribute("lstcat");
+        <%            List<Categoria> lstcat = (List<Categoria>) request.getAttribute("lstcat");
         %>
         <section>
             <div class="container mt-4 mb-4">
@@ -44,26 +43,6 @@
                 </div>
             </div>
         </section>
-        <section id="footer" class="bg-negro">
-            <div class="container">
-                <img class="ft-logo" src="img\index\logo-matilde.png" alt="logo">
-                <ul class="list-inline">
-                    <li class="list-inline-item footer-menu"><a href="#">Home</a></li>
-                    <li class="list-inline-item footer-menu"><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-                    <li class="list-inline-item footer-menu"><a href="#">Compras</a></li>
-                    <li class="list-inline-item footer-menu"><a href="#contacto">Contacto</a></li>
-                </ul>
-                <ul class="list-inline redes">
-                    <li class="list-inline-item footer-menu"><a
-                            href="https://www.facebook.com/Pasteleria-DOÑA-Matilde-364489010801732" target="_blank"><i
-                                class="icon ion-logo-facebook"></i></a></li>
-                    <li class="list-inline-item footer-menu"><a href="https://www.instagram.com/matild.e12"
-                                                                target="_blank"><i class="icon ion-logo-instagram"></i></a></li>
-                    <li class="list-inline-item footer-menu"><a href="#"><i class="icon ion-logo-youtube"></i></a></li>
-                    <li class="list-inline-item footer-menu"><a href="#"><i class="icon ion-logo-twitter"></i></a></li>
-                </ul>
-                <small>©Pastelería Doña Matilde - 2020 Todos los derechos reservados. </small>
-            </div>
-        </section>
+        <%@include file="footer.jsp" %>
     </body>
 </html>
