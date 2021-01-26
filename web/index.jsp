@@ -131,32 +131,12 @@
                 <div class="content-center mt-4">
                     <h2><b>Nuestra ubicación</b></h2>
                     <br>
-                    <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.9741365879163!2d-77.03686053958525!3d-12.045300445151748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8ca15ba2aaf%3A0x9c3df02379d2fd42!2sDo%C3%B1a%20Matilde%2C%20Pasteler%C3%ADa%20Fina!5e0!3m2!1ses!2spe!4v1608512106983!5m2!1ses!2spe" allowfullscreen></iframe>
+                    <div class="ratio ratio-16x9 shadow-lg p-3 mb-5 bg-white rounded">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.9741365879163!2d-77.03686053958525!3d-12.045300445151748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8ca15ba2aaf%3A0x9c3df02379d2fd42!2sDo%C3%B1a%20Matilde%2C%20Pasteler%C3%ADa%20Fina!5e0!3m2!1ses!2spe!4v1608512106983!5m2!1ses!2spe" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="footer" class="bg-negro">
-            <div class="container">
-                <img class="ft-logo" src="img\index\logo-matilde.png" alt="logo">
-                <ul class="list-inline">
-                    <li class="list-inline-item footer-menu"><a href="#">Home</a></li>
-                    <li class="list-inline-item footer-menu"><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-                    <li class="list-inline-item footer-menu"><a href="#">Compras</a></li>
-                    <li class="list-inline-item footer-menu"><a href="#contacto">Contacto</a></li>
-                </ul>
-                <ul class="list-inline redes">
-                    <li class="list-inline-item footer-menu"><a
-                            href="https://www.facebook.com/Pasteleria-DOÑA-Matilde-364489010801732" target="_blank"><i
-                                class="icon ion-logo-facebook"></i></a></li>
-                    <li class="list-inline-item footer-menu"><a href="https://www.instagram.com/matild.e12"
-                                                                target="_blank"><i class="icon ion-logo-instagram"></i></a></li>
-                    <li class="list-inline-item footer-menu"><a href="#"><i class="icon ion-logo-youtube"></i></a></li>
-                    <li class="list-inline-item footer-menu"><a href="#"><i class="icon ion-logo-twitter"></i></a></li>
-                </ul>
-                <small>©Pastelería Doña Matilde - 2020 Todos los derechos reservados. </small>
-            </div>
-        </section>
+        <%@include file="footer.jsp" %>
     </body>
 </html>
