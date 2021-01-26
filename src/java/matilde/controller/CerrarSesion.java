@@ -35,6 +35,13 @@ public class CerrarSesion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+        }
+        //response.sendRedirect("/WA_PasteleriaMatilde/Login.jsp"); 
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
+        dispatcher.forward(request, response);
     }
 
     /**
@@ -48,13 +55,7 @@ public class CerrarSesion extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession(false);
-        if (session != null) {
-            session.invalidate();
-        }
-        //response.sendRedirect("/WA_PasteleriaMatilde/Login.jsp"); 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/Login.jsp");
-        dispatcher.forward(request, response);
+        
     }
 
     /**
