@@ -1,0 +1,32 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15-ene-2021, 11:10:28
+    Author     : Sebastián
+*/
+.bg-negro{
+    background-color: #000000;
+}
+#footer{
+    padding: 80px 0;
+    text-align: center;
+    color: #ffffff;
+}
+.ft-logo{
+    width: 150px;
+}
+#footer a{
+    color:#ffffff
+}
+#footer a:hover{
+    color:#ffffff
+}
+#footer .list-inline .list-linline-item{
+    padding: 10px 15px;
+}
+.redes{
+    font-size: 35px;
+ }
