@@ -1,0 +1,13 @@
+.btn-link{
+    text-decoration: none;
+    padding-bottom: 0;
+}
+
+.btn-link ion-icon{
+    font-size: 22px;
+    margin-right: 5px;
+}
+a ion-icon{
+    font-size: 22px;
+    margin-right: 5px;
+}

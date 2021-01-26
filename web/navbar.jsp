@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<link href="Styles/css/navbar.css" rel="stylesheet" type="text/css"/>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="#">Pastelería Doña Matilde</a>  
@@ -21,12 +22,9 @@
                     <a class="nav-link active" aria-current="page" href="#">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Compras</a>
-                </li>
-                <li class="nav-item">
                     <form action="Categorías" method="POST">
                         <input type="hidden" value="<%=user%>" name="user" id="user">
-                        <button type="submit" class="btn btn-link text-light"><ion-icon name="add-circle-outline"></ion-icon>Registrar</button>
+                        <button type="submit" class="btn btn-link text-dark"></ion-icon>Compras</button>
                     </form>
                 </li>
                 <li class="nav-item dropdown">
@@ -43,7 +41,7 @@
                 } else {
                 %>
                 <li class="nav-item">
-                    <a class="btn btn-outline-dark" aria-current="page" href="#">Iniciar Sesión</a>
+                    <a class="btn btn-outline-dark" aria-current="page" href="Login">Iniciar Sesión</a>
                 </li>
                 <%
                     }

@@ -1,0 +1,37 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(219,226,226);
+}
+.row{
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 12px 12px 22px grey;
+}
+
+.img{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.btn-login{
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 3px;
+    font-weight: bold;
+}
+.btn-login:hover{
+    background:#ffffff;
+    border: 1px solid;
+    color: #000000;
+}
+
+
