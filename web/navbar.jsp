@@ -39,7 +39,13 @@
                 } else {
                 %>
                 <li class="nav-item">
-                    <a class="btn btn-outline-dark" aria-current="page" href="Login">Iniciar Sesión</a>
+                    <a class="nav-link active" aria-current="page" href="#sobre-nosotros"><ion-icon name="help-circle-outline"></ion-icon> Sobre Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#contacto"><ion-icon name="call-outline"></ion-icon> Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-dark" aria-current="page" href="Login"><ion-icon name="person-circle-outline"></ion-icon> Iniciar Sesión</a>
                 </li>
                 <%
                     }
