@@ -1,0 +1,20 @@
+.btn-f{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: block;
+    text-decoration: none;
+    background: #cc2b2b;
+    color: #ffffff;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 4);
+    transition: all 500ms ease;
+    z-index: 100;
+}
+.btn-carrito{
+    font-size: 15px;
+}

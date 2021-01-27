@@ -12,6 +12,7 @@
     </head>
     <body>
         <%@include file="navbar.jsp" %>
+        <%@include file="btn-carrito.jsp" %>
         <section id="fondo-home" style="background-image: url('img/index/fondo-home.jpg');">
             <div class="container">
                 <div class="content-center">

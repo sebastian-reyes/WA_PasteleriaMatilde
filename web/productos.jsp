@@ -12,8 +12,7 @@
     </head>
     <body>
         <%@include file="navbar.jsp" %>
-        <%            
-            List<Producto> lstprod = (List<Producto>) request.getAttribute("lstprod");
+        <%            List<Producto> lstprod = (List<Producto>) request.getAttribute("lstprod");
             String nombre = (String) request.getAttribute("nomcat");
         %>
         <section>
@@ -44,6 +43,7 @@
                 </div>
             </div>
         </section>
+        <%@include file="btn-carrito.jsp" %>
         <%@include file="footer.jsp" %>
     </body>
 </html>

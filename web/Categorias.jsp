@@ -17,6 +17,7 @@
     </head>
     <body>
         <%@include file="navbar.jsp" %>
+        <%@include file="btn-carrito.jsp" %>
         <%            
             List<Categoria> lstcat = (List<Categoria>) request.getAttribute("lstcat");
             String user = request.getAttribute("user").toString();
