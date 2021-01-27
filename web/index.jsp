@@ -9,6 +9,8 @@
         <title>Pastelería Doña Matilde</title>
         <link href="Styles/css/index.css" rel="stylesheet" type="text/css"/>
         <link href="Styles/css/footer.css" rel="stylesheet" type="text/css"/>
+        
+
     </head>
     <body>
         <%@include file="navbar.jsp" %>

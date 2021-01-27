@@ -8,4 +8,5 @@
 <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
 <link href="Styles/css/footer.css" rel="stylesheet" type="text/css"/>
 <link href="Styles/css/sections.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/ico" href="img/icono/logo-matilde.ico">
 <script src="Scripts/Bootstrap/bootstrap.min.js" type="text/javascript"></script>
