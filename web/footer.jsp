@@ -6,9 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%@include file="ScriptStyle.jsp" %>
-<link href="Styles/css/footer.css" rel="stylesheet" type="text/css"/>
-<link href="Styles/css/sections.css" rel="stylesheet" type="text/css"/>
 <section id="footer" class="bg-negro">
     <div class="container">
         <img class="ft-logo" src="img\index\logo-matilde.png" alt="logo">
