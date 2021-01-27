@@ -1,9 +1,3 @@
-<%-- 
-    Document   : productos
-    Created on : 26-ene-2021, 20:02:45
-    Author     : Sebastián
---%>
-
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="matilde.model.Producto"%>
 <%@page import="java.util.List"%>
@@ -38,8 +32,8 @@
                             <div class="card-body">
                                 <center>
                                     <h3>S/. <%=df.format(objprod.getPrecio())%></h3>
-                                    <a href="#" class="btn btn-info mt-3"><i class="icon ion-md-information-circle-outline"></i> Información</a>
-                                    <a href="#" class="btn btn-success mt-3"><i class="icon ion-md-add"></i> Agregar Carrito</a>
+                                    <a href="#" class="btn btn-info mt-3 "><ion-icon name="information-circle-outline" ></ion-icon> Información</a>
+                                    <a href="#" class="btn btn-success mt-3"><ion-icon name="cart-outline"></ion-icon> Agregar Carrito</a>
                                 </center>
                             </div>
                         </div>

@@ -39,7 +39,7 @@
                                     <input type="hidden" value="<%=user%>" name="user" id="user">
                                     <input type="hidden" value="<%=objcat.getId_cat()%>" name="idcat" id="idcat">
                                     <input type="hidden" value="<%=objcat.getNom_cat()%>" name="nomcat" id="nomcat">
-                                    <button class="btn btn-primary">Muestrame más</button>
+                                    <button class="btn btn-primary"><ion-icon name="pricetags-outline"></ion-icon> Muestrame más</button>
                                 </form>
                             </div>
                         </div>
