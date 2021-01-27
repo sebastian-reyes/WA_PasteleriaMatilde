@@ -20,12 +20,11 @@
         </ul>
         <ul class="list-inline redes">
             <li class="list-inline-item footer-menu"><a
-                    href="https://www.facebook.com/Pasteleria-DOÑA-Matilde-364489010801732" target="_blank"><i
-                        class="icon ion-logo-facebook"></i></a></li>
+                    href="https://www.facebook.com/Pasteleria-DOÑA-Matilde-364489010801732" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></li>
             <li class="list-inline-item footer-menu"><a href="https://www.instagram.com/matild.e12"
-                                                        target="_blank"><i class="icon ion-logo-instagram"></i></a></li>
-            <li class="list-inline-item footer-menu"><a href="#"><i class="icon ion-logo-youtube"></i></a></li>
-            <li class="list-inline-item footer-menu"><a href="#"><i class="icon ion-logo-twitter"></i></a></li>
+                                                        target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li class="list-inline-item footer-menu"><a href="#"><ion-icon name="logo-youtube"></ion-icon></a></li>
+            <li class="list-inline-item footer-menu"><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
         </ul>
         <small>©Pastelería Doña Matilde - 2020 Todos los derechos reservados. </small>
     </div>

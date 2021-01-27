@@ -14,15 +14,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import matilde.dao.CategoriaDao;
-import matilde.model.Categoria;
+import matilde.dao.ProductoDao;
+import matilde.model.Producto;
 
 /**
  *
  * @author Sebastián
  */
-@WebServlet(name = "Categorias", urlPatterns = {"/Categorias"})
-public class Categorias extends HttpServlet {
+@WebServlet(name = "Productos", urlPatterns = {"/Productos"})
+public class Productos extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -52,11 +52,15 @@ public class Categorias extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String user = request.getParameter("user");
+        int idcat = Integer.parseInt(request.getParameter("idcat"));
+        String nomcat = request.getParameter("nomcat");
         
-        List<Categoria> lstcat = new CategoriaDao().listarCat();
-        request.setAttribute("lstcat", lstcat);
+        List<Producto> lstprod = new ProductoDao().listarProductos(idcat);
+        
+        request.setAttribute("nomcat", nomcat);
+        request.setAttribute("lstprod", lstprod);
         request.setAttribute("user", user);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/Categorias.jsp");
+        RequestDispatcher dispatcher= request.getRequestDispatcher("/productos.jsp");
         dispatcher.forward(request, response);
     }
 

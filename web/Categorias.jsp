@@ -17,7 +17,9 @@
     </head>
     <body>
         <%@include file="navbar.jsp" %>
-        <%            List<Categoria> lstcat = (List<Categoria>) request.getAttribute("lstcat");
+        <%            
+            List<Categoria> lstcat = (List<Categoria>) request.getAttribute("lstcat");
+            String user = request.getAttribute("user").toString();
         %>
         <section>
             <div class="container mt-4 mb-4">
@@ -33,7 +35,12 @@
                             <div class="card-body">
                                 <h5 class="card-title"><%=objcat.getNom_cat()%></h5>
                                 <p class="card-text"><%=objcat.getDescripcion()%></p>
-                                <a href="Productos" class="btn btn-primary">Muestrame más</a>
+                                <form method="POST" action="Productos">
+                                    <input type="hidden" value="<%=user%>" name="user" id="user">
+                                    <input type="hidden" value="<%=objcat.getId_cat()%>" name="idcat" id="idcat">
+                                    <input type="hidden" value="<%=objcat.getNom_cat()%>" name="nomcat" id="nomcat">
+                                    <button class="btn btn-primary">Muestrame más</button>
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -7,6 +7,9 @@ and open the template in the editor.
     Created on : 15-ene-2021, 11:10:28
     Author     : Sebastián
 */
+a{
+    text-decoration: none;
+}
 .bg-negro{
     background-color: #000000;
 }
@@ -19,10 +22,10 @@ and open the template in the editor.
     width: 150px;
 }
 #footer a{
-    color:#ffffff
+    color:#ffffff;
 }
 #footer a:hover{
-    color:#ffffff
+    color:#ffffff;
 }
 #footer .list-inline .list-linline-item{
     padding: 10px 15px;
