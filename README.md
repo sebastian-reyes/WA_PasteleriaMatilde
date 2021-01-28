@@ -1,4 +1,8 @@
 # Tienda online para 'Pastelería Doña Matilde'
+<p align="center">
+  <img width="460" height="300" src="https://github.com/sebastian-reyes/WA_PasteleriaMatilde/blob/master/gh-rf/img/logo-matilde.png">
+</p>
+
 Proyecto de tienda online para 'Pastelería Doña Matilde' realizado en Java EE con motor de base de datos MariaDB.
 
 ## Clonar
@@ -15,6 +19,7 @@ Crear base de datos en **MariaDB** o **MySQ** y ejecutar el script.
 ```sql
 CREATE DATABASE `bdpasteleria`;
 ```
+Modificar el archivo **BDConnection.java** según su usario de **MariaDB** o **MySQ**
 ```java
 private String bd="bdpasteleria";
 private String url="jdbc:mysql://localhost:3306/"+bd;
