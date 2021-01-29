@@ -32,6 +32,3 @@ private String password="12345"; //Cambiar la contraseña según su PC
 | :---: | :---: |
 | <a href="https://github.com/sebastian-reyes" target="_blank"><img src="https://avatars.githubusercontent.com/u/71537939?s=460&u=c3f1def28f8860e833ae8352815eeef97acd4f7a&v=4" width="200"></a> | <a href="https://github.com/LuisTerrones" target="_blank"><img src="https://avatars.githubusercontent.com/u/76187524?s=400&u=c80282b034590a0fc0eeb51983ceaa0429dbdcd9&v=4" width="200"></a> |
 | sebastianreyes2105@gmail.com | stefano.piscis20@gmail.com |
-
-## Licencia MIT
-**©Pastelería Doña Matilde - 2020 Todos los derechos reservados.**
