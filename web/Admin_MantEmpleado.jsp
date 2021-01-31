@@ -40,7 +40,7 @@
                                             <h5 class="modal-title text-white" id="staticBackdropLabel">Nuevo Empleado</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"><i class="fa fa-times text-white" aria-hidden="true"></i></button>
                                         </div>
-                                        <form action="AdmRegistrar" method="POST">
+                                        <form action="AdmRegistrarEmp" method="POST">
                                             <div class="modal-body">
                                                 <div class="row">
                                                     <div class="col-md-6 mb-3">

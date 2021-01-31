@@ -17,7 +17,6 @@
         </a>
         <a href="#">
             <img width="30" src="img/admin/avatar.svg" alt="" />
-            <!-- <i class="fa fa-user-circle-o" aria-hidden="true"></i> -->
         </a>
     </div>
 </nav>
@@ -33,7 +32,7 @@
     <div class="sidebar__menu">
         <div class="sidebar__link active_menu_link">
             <i class="fa fa-home"></i>
-            <a href="#">Inicio</a>
+            <a href="Home">Inicio</a>
         </div>
         <h2>MANTENIMIENTO</h2>
         <div class="sidebar__link ">
@@ -72,7 +71,7 @@
         </div>
         <div class="sidebar__logout">
             <i class="fa fa-power-off"></i>
-            <a href="#">Cerrar Sesión</a>
+            <a href="CerrarSesion">Cerrar Sesión</a>
         </div>
     </div>
 </div>
