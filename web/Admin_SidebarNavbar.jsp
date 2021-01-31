@@ -45,7 +45,7 @@
         </div>
         <div class="sidebar__link">
             <i class="fa fa-shopping-cart"></i>
-            <a href="#">Mant. Productos</a>
+            <a href="AdmCategorias">Mant. Productos</a>
         </div>
         <div class="sidebar__link">
             <i class="fa fa-truck"></i>

@@ -53,5 +53,23 @@ public class ProductoDao implements I_ProductoDao{
     public int agregarProd(Producto p) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public boolean eliminarProducto(String id) {
+        BDConnection objconex = new BDConnection();
+        Connection conex = objconex.Conectar();
+        Boolean respuesta = false;
+        try {
+            PreparedStatement prepared = conex.prepareStatement("{call sp_eliminarProducto(?)}");
+            prepared.setString(1, id);
+            prepared.execute();
+            respuesta = prepared.getUpdateCount() > 0;
+            prepared.close();
+            objconex.Desconectar();
+        } catch (SQLException ex) {
+
+        }
+        return respuesta;
+    }
     
 }

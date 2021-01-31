@@ -124,7 +124,75 @@
                                     <td><%=objcliente.getApellido_paterno()%></td>
                                     <td><%=objcliente.getApellido_materno()%></td>
                                     <td><%=objcliente.getUsername()%></td>
-                                    <td><a href="" class="btn btn-info">Actualizar</a></td>
+                                    <td>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#<%=objcliente.getUsername()%>">
+                                            Actualizar
+                                        </button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="<%=objcliente.getUsername()%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel"><%=objcliente.getNombres()%> <%=objcliente.getApellido_paterno()%> <%=objcliente.getApellido_materno()%></h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <form action="AdmRegistrar" method="POST">
+                                                        <div class="modal-body">
+                                                            <div class="row">
+                                                                <div class="col-md-6 mb-3">
+                                                                    <label for="txtusuario">Usuario</label>
+                                                                    <input type="text" class="form-control" id="txtusuario" name="txtusuario" value="<%=objcliente.getUsername()%>">
+                                                                </div>
+                                                                <div class="col-md-6 mb-3">
+                                                                    <label for="txtpassword">Contraseña</label>
+                                                                    <input type="password" class="form-control" id="txtpassword" name="txtpassword" value="<%=objcliente.getPassword()%>">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6 mb-3">
+                                                                    <label for="txtnombres">Nombres</label>
+                                                                    <input type="text" class="form-control" id="txtnombres" name="txtnombres" value="<%=objcliente.getNombres()%>">
+                                                                </div>
+                                                                <div class="col-md-3 mb-3">
+                                                                    <label for="txtappat">Ap. Paterno</label>
+                                                                    <input type="text" class="form-control" id="txtappat" name="txtappat" value="<%=objcliente.getApellido_paterno()%>">
+                                                                </div>
+                                                                <div class="col-md-3 mb-3">
+                                                                    <label for="txtapmat">Ap. Materno</label>
+                                                                    <input type="text" class="form-control" id="txtapmat" name="txtapmat" value="<%=objcliente.getApellido_materno()%>">
+                                                                </div>
+                                                            </div>
+                                                            <div class=" mb-3">
+                                                                <label for="txtemail">Correo electrónico</label>
+                                                                <input type="email" class="form-control" id="txtemail" name="txtemail" value="<%=objcliente.getEmail()%>">
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-5 mb-3">
+                                                                    <label for="txttelefono">Celular</label>
+                                                                    <input type="text" class="form-control" id="txttelefono" name="txttelefono" value="<%=objcliente.getTelefono()%>">
+                                                                </div>
+                                                                <div class="col-md-4 mb-3">
+                                                                    <label for="txtdocumento">Tipo Documento</label>
+                                                                    <select id="inputState" class="form-select">
+                                                                        <option>DNI</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-3 mb-3">
+                                                                    <label for="txtdni">Documento</label>
+                                                                    <input type="text" class="form-control" id="txtdni" name="txtdni" value="<%=objcliente.getDni()%>">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                                                            <button type="submit" class="btn btn-warning">Actualizar</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>
                                         <input type="hidden" id="idc" value="<%=objcliente.getId_usuario()%>">
                                         <a href="#" id="btnEliminar" class="btn btn-danger">Eliminar</a>
