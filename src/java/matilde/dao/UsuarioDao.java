@@ -205,4 +205,19 @@ public class UsuarioDao implements I_UsuarioDao {
         return respuesta;
     }
 
+    @Override
+    public int contarUsuarios() {
+        int nuser = 0;
+        BDConnection objconex = new BDConnection();
+        Connection conex = objconex.Conectar();
+        try{
+            Statement statement = conex.createStatement();
+            ResultSet resultado = statement.executeQuery("{CALL sp_ListarClientes()}");
+            while(resultado.next()){
+                nuser++;
+            }
+        }catch(SQLException ex){}
+        return nuser;
+    }
+
 }

@@ -57,14 +57,16 @@ public class Autenticacion extends HttpServlet {
         String vista;
         String respuesta = "";
         Usuario objusuario = new UsuarioDao().validarUsuario(user, password);
-
+        
         if (objusuario != null) {
             vista = "/index.jsp";
             color = "success";
             session.setAttribute("sesion", objusuario);
         } else if (user.equals("admin") && password.equals("admin-contra")) {
+            int nuser = new UsuarioDao().contarUsuarios();
             vista = "/Admin_Home.jsp";
             color = "success";
+            request.setAttribute("nuser", nuser);
         } else {
             respuesta = "Error al iniciar sesión";
             vista = "/login.jsp";

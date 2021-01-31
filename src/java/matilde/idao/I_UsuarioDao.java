@@ -20,4 +20,5 @@ public interface I_UsuarioDao {
     public List<Usuario> listarCliente();
     public List<Usuario> listarEmpleado();
     public boolean eliminarUsuario(String id);
+    public int contarUsuarios();
 }

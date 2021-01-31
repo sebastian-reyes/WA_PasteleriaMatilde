@@ -11,6 +11,9 @@
         <link rel="icon" type="image/ico" href="img/icono/logo-matilde.ico">
         <title>Pastelería Doña Matilde</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <%
+            int nuser = (Integer)request.getAttribute("nuser");
+        %>
     </head>
     <body id="body">
         <div class="container">
@@ -29,7 +32,7 @@
                             <i class="fa fa-user-o fa-2x text-lightblue" aria-hidden="true"></i>
                             <div class="card_inner">
                                 <p class="text-primary-p">Número de Usuarios</p>
-                                <span class="font-bold text-title">25</span>
+                                <span class="font-bold text-title"><%=nuser%></span>
                             </div>
                         </div>
 
