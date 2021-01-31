@@ -7,21 +7,19 @@ package matilde.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import matilde.dao.UsuarioDao;
-import matilde.model.Usuario;
 
 /**
  *
  * @author Sebastián
  */
-@WebServlet(name = "AdmRegistrar", urlPatterns = {"/AdmRegistrar"})
-public class AdmRegistrar extends HttpServlet {
+@WebServlet(name = "EliminarUsuarioController", urlPatterns = {"/EliminarUsuarioController"})
+public class EliminarUsuarioController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,6 +32,19 @@ public class AdmRegistrar extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet EliminarUsuarioController</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet EliminarUsuarioController at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -48,6 +59,7 @@ public class AdmRegistrar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        processRequest(request, response);
     }
 
     /**
@@ -61,39 +73,8 @@ public class AdmRegistrar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        String id = "";
-        String rol = "R3";
-        String user = request.getParameter("txtusuario");
-        String password = request.getParameter("txtpassword");
-        String nombres = request.getParameter("txtnombres");
-        String ap_pat = request.getParameter("txtappat");
-        String ap_mat = request.getParameter("txtapmat");
-        String telefono = request.getParameter("txttelefono");
-        String email = request.getParameter("txtemail");
-        String dni = request.getParameter("txtdni");
-        
-        String respuesta ="";
-        String vista;
-        String color;
-        boolean resultado = false;
-        
-        Usuario objusuario = new Usuario(id,rol,user,password,nombres,ap_pat,ap_mat,telefono,email,dni);
-        resultado = new UsuarioDao().RegistrarUsuario(objusuario);
-        
-        if(resultado == false){
-            vista = "/Clientes";
-            respuesta = "Registado correcatmente";
-            color = "success";
-        }else{
-            vista = "/Admin_MantCliente.jsp";
-            respuesta = "Error al registrarse";
-            color = "danger";
-        }
-        request.setAttribute("color", color);
-        request.setAttribute("respuesta", respuesta);
-        response.sendRedirect("Clientes");
+        String iduser= request.getParameter("id");
+        boolean resultado = new UsuarioDao().eliminarUsuario(iduser);
     }
 
     /**

@@ -5,7 +5,8 @@
         <group>
             <file>file:/C:/Users/Sebastián/Desktop/WA_PasteleriaMatilde/web/Admin_Home.jsp</file>
             <file>file:/C:/Users/Sebastián/Desktop/WA_PasteleriaMatilde/web/Admin_MantCliente.jsp</file>
-            <file>file:/C:/Users/Sebastián/Desktop/WA_PasteleriaMatilde/web/Styles/css/admin_styles.css</file>
+            <file>file:/C:/Users/Sebastián/Desktop/WA_PasteleriaMatilde/src/java/matilde/controller/Registrar.java</file>
+            <file>file:/C:/Users/Sebastián/Desktop/WA_PasteleriaMatilde/src/java/matilde/controller/AdmRegistrar.java</file>
             <file>file:/C:/Users/Sebastián/Desktop/WA_PasteleriaMatilde/web/Admin_SidebarNavbar.jsp</file>
         </group>
     </open-files>
