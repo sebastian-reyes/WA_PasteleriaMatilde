@@ -42,7 +42,7 @@
         </div>
         <div class="sidebar__link">
             <i class="fa fa-address-card-o"></i>
-            <a href="#">Mant. Empleados</a>
+            <a href="Empleados">Mant. Empleados</a>
         </div>
         <div class="sidebar__link">
             <i class="fa fa-shopping-cart"></i>

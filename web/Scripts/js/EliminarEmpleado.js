@@ -20,7 +20,7 @@ $(document).ready(function () {
                             icon: "success",
                         }).then((willDelete)=>{
                             if(willDelete){
-                                parent.location.href="AdmEmpController"
+                                parent.location.href="Empleados"
                             }
                         });
                     } else {
