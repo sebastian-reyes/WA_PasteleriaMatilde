@@ -67,7 +67,7 @@ public class Autenticacion extends HttpServlet {
             color = "success";
         } else {
             respuesta = "Error al iniciar sesión";
-            vista = "/Login.jsp";
+            vista = "/login.jsp";
             color = "danger";
         }
         request.setAttribute("color", color);

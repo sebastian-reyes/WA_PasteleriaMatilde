@@ -8,6 +8,6 @@
 <!DOCTYPE html>
 <div class="btn-f">
     <div class="btn-carrito">
-        <ion-icon name="cart-outline"></ion-icon>
+        <i class="fa fa-shopping-cart"></i>
     </div>
 </div>
