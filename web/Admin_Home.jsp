@@ -16,7 +16,7 @@
         %>
     </head>
     <body id="body">
-        <div class="container">
+        <div class="container-admin">
             <%@include file="Admin_SidebarNavbar.jsp" %>
             <main>
                 <div class="main__container">

@@ -38,7 +38,7 @@
         <h2>MANTENIMIENTO</h2>
         <div class="sidebar__link ">
             <i class="fa fa-users" aria-hidden="true"></i>
-            <a href="#">Mant. Clientes</a>
+            <a href="Clientes">Mant. Clientes</a>
         </div>
         <div class="sidebar__link">
             <i class="fa fa-address-card-o"></i>

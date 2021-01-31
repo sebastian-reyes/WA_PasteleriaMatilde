@@ -1,9 +1,3 @@
-<%-- 
-    Document   : registro
-    Created on : 26-ene-2021, 13:57:54
-    Author     : Sebastián
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,7 +17,7 @@
                 </div> 
                 <div class="col-lg-7 px-5 pt-5">
                     <h2>Registro 'Pastelería Doña Matilde'</h2>
-                    <form method="POST" action="RegistroController">
+                    <form method="POST" action="Registrar">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="txtusuario">Usuario</label>
