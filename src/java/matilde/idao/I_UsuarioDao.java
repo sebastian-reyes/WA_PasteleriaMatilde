@@ -17,6 +17,8 @@ public interface I_UsuarioDao {
     public boolean RegistrarUsuario(Usuario objusuario);
     public boolean RegistrarEmpleado(Usuario objusuario);
     public Usuario obtenerUsuario(String coduser);
+    public boolean ActualizarUsuario(Usuario objusuario, String conf_pass);
+    public boolean ActualizarEmpleado(Usuario objusuario, String conf_pass);
     public List<Usuario> listarCliente();
     public List<Usuario> listarEmpleado();
     public boolean eliminarUsuario(String id);

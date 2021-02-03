@@ -19,41 +19,41 @@ import matilde.model.Producto;
  *
  * @author Sebastián
  */
-public class ProductoDao implements I_ProductoDao{
-
+public class ProductoDao implements I_ProductoDao {
+    
     @Override
     public List<Producto> listarProductos(int idcat) {
         List<Producto> lstprod = new ArrayList<>();
         BDConnection objconex = new BDConnection();
         Connection conex = objconex.Conectar();
-        try{
+        try {
             PreparedStatement prepared = conex.prepareCall("{call sp_ListarProductosCat(?)}");
             prepared.setInt(1, idcat);
             ResultSet result = prepared.executeQuery();
-            while(result.next()){
-                lstprod.add(new Producto(result.getString(1), 
-                                         result.getInt(2), 
-                                         result.getString(3), 
-                                         result.getString(4), 
-                                         result.getInt(5), 
-                                         result.getInt(6), 
-                                         result.getDouble(7), 
-                                         result.getString(8)));
+            while (result.next()) {
+                lstprod.add(new Producto(result.getString(1),
+                        result.getInt(2),
+                        result.getString(3),
+                        result.getString(4),
+                        result.getInt(5),
+                        result.getInt(6),
+                        result.getDouble(7),
+                        result.getString(8)));
             }
             result.close();
             prepared.close();
             objconex.Desconectar();
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             
         }
         return lstprod;
     }
-
+    
     @Override
     public int agregarProd(Producto p) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
     public boolean eliminarProducto(String id) {
         BDConnection objconex = new BDConnection();
@@ -67,9 +67,35 @@ public class ProductoDao implements I_ProductoDao{
             prepared.close();
             objconex.Desconectar();
         } catch (SQLException ex) {
-
+            
         }
         return respuesta;
+    }
+    
+    @Override
+    public Producto obtenerProducto(String id) {
+        BDConnection objconex = new BDConnection();
+        Connection conex = objconex.Conectar();
+        Producto objprod = null;
+        try {
+            PreparedStatement prepared = conex.prepareStatement("{call sp_ObtenerProducto(?)}");
+            prepared.setString(1, id);
+            ResultSet result = prepared.executeQuery();
+            while (result.next()) {
+                objprod = new Producto(result.getString(1),
+                        result.getInt(2),
+                        result.getString(3),
+                        result.getString(4),
+                        result.getInt(5),
+                        result.getInt(6),
+                        result.getDouble(7),
+                        result.getString(8));
+            }
+            result.close();
+            prepared.close();
+            objconex.Desconectar();
+        } catch (SQLException ex) {}
+        return objprod;
     }
     
 }

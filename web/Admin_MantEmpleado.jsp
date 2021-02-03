@@ -136,10 +136,11 @@
                                                         <h5 class="modal-title" id="exampleModalLabel"><%=objcliente.getNombres()%> <%=objcliente.getApellido_paterno()%> <%=objcliente.getApellido_materno()%></h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
-                                                    <form action="AdmRegistrar" method="POST">
+                                                    <form action="ActualizarEmp" method="POST">
                                                         <div class="modal-body">
                                                             <div class="row">
                                                                 <div class="col-md-6 mb-3">
+                                                                    <input type="hidden" class="form-control" id="txtid" name="txtid" value="<%=objcliente.getId_usuario()%>">
                                                                     <label for="txtusuario">Usuario</label>
                                                                     <input type="text" class="form-control" id="txtusuario" name="txtusuario" value="<%=objcliente.getUsername()%>">
                                                                 </div>
@@ -180,6 +181,10 @@
                                                                 <div class="col-md-3 mb-3">
                                                                     <label for="txtdni">Documento</label>
                                                                     <input type="text" class="form-control" id="txtdni" name="txtdni" value="<%=objcliente.getDni()%>">
+                                                                </div>
+                                                                <div class="col-md-12 mb-3">
+                                                                    <label for="txtconfpass">Confirmar Contraseña</label>
+                                                                    <input type="text" class="form-control" id="txtconfpass" name="txtconfpass" placeholder="Confirmar contaseña">
                                                                 </div>
                                                             </div>
                                                         </div>

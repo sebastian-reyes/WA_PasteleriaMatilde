@@ -4,6 +4,8 @@
     Author     : Sebastián
 --%>
 
+<%@page import="matilde.model.Carrito"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -34,14 +36,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <%
+                                        List<Carrito> lstcarrito = (List<Carrito>)request.getAttribute("lstcarrito");
+                                        for(Carrito objcar:lstcarrito){
+                                    %>
                                     <tr>
                                         <th scope="row">1</th>
-                                        <td>Torta de Vainilla</td>
+                                        <td><%=objcar.getNombre()%></td>
                                         <td>S/. 75.00</td>
                                         <td><input class="form-control" type="number" value="1"></td>
                                         <td>S/. 75.00</td>
                                         <td><a class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
                                     </tr>
+                                    <%
+                                        }
+                                    %>
                                 </tbody>
                             </table>
                         </div>

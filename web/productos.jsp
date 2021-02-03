@@ -60,6 +60,7 @@
                                             </div>
                                         </div>
                                         <input type="hidden" name="user" id="user" value="<%=request.getAttribute("user")%>">
+                                        <input type="hidden" name="idp" id="idp" value="<%=objprod.getId_producto()%>">
                                         <input type="hidden" name="idcat" id="idcat" value="<%=objprod.getId_cat()%>">
                                         <input type="hidden" name="nomcat" id="nomcat" value="<%=request.getAttribute("nomcat")%>">
                                         <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i> Agregar al carrito</button>
@@ -68,6 +69,7 @@
                             </div>
                         </div>
                     </div>
+
                     <%
                         }
                     %>

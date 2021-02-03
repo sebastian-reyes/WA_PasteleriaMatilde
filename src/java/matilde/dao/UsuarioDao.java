@@ -220,4 +220,58 @@ public class UsuarioDao implements I_UsuarioDao {
         return nuser;
     }
 
+    @Override
+    public boolean ActualizarUsuario(Usuario objusuario, String conf_pass) {
+        BDConnection objconex = new BDConnection();
+        Connection conex = objconex.Conectar();
+        Boolean respuesta = false;
+
+        try {
+            PreparedStatement prepared = conex.prepareStatement("{call sp_EditarUsuario(?,?,?,?,?,?,?,?,?,?)}");
+            prepared.setString(1, objusuario.getId_usuario());
+            prepared.setString(2, objusuario.getUsername());
+            prepared.setString(3, objusuario.getPassword());
+            prepared.setString(4, conf_pass);
+            prepared.setString(5, objusuario.getNombres());
+            prepared.setString(6, objusuario.getApellido_paterno());
+            prepared.setString(7, objusuario.getApellido_materno());
+            prepared.setString(8, objusuario.getTelefono());
+            prepared.setString(9, objusuario.getEmail());
+            prepared.setString(10, objusuario.getDni());
+            prepared.execute();
+            prepared.close();
+            objconex.Desconectar();
+        } catch (SQLException ex) {
+
+        }
+        return respuesta;
+    }
+
+    @Override
+    public boolean ActualizarEmpleado(Usuario objusuario, String conf_pass) {
+        BDConnection objconex = new BDConnection();
+        Connection conex = objconex.Conectar();
+        Boolean respuesta = false;
+
+        try {
+            PreparedStatement prepared = conex.prepareStatement("{call sp_EditarEmpleado(?,?,?,?,?,?,?,?,?,?)}");
+            prepared.setString(1, objusuario.getId_usuario());
+            prepared.setString(2, objusuario.getUsername());
+            prepared.setString(3, objusuario.getPassword());
+            prepared.setString(4, conf_pass);
+            prepared.setString(5, objusuario.getNombres());
+            prepared.setString(6, objusuario.getApellido_paterno());
+            prepared.setString(7, objusuario.getApellido_materno());
+            prepared.setString(8, objusuario.getTelefono());
+            prepared.setString(9, objusuario.getEmail());
+            prepared.setString(10, objusuario.getDni());
+            prepared.execute();
+            prepared.close();
+            objconex.Desconectar();
+        } catch (SQLException ex) {
+
+        }
+        return respuesta;
+    }
+
 }
