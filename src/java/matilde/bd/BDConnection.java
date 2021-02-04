@@ -7,9 +7,9 @@ import java.sql.SQLException;
 
 public class BDConnection {
     private String bd="bdpasteleria";
-    private String url="jdbc:mysql://localhost:3306/"+bd;
+    private String url="jdbc:mysql://localhost:3307/"+bd;
     private String user="root";
-    private String password="12345";
+    private String password="root";
     Connection conexion = null;
     
     public Connection Conectar(){

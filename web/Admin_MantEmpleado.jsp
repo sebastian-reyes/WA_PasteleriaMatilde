@@ -23,7 +23,7 @@
                 <div class="main__container">
                     <div class="main__title">
                         <div class="main__greeting">
-                            <h1>Mantenimiento de Clientes</h1>
+                            <h1>Mantenimiento de Empleados</h1>
                             <p>Se puede actualizar crear, actualizar y eliminar clientes</p>
                         </div>
                         <div class="main__greeting ms-auto">
