@@ -1,9 +1,4 @@
-<%-- 
-    Document   : Carrito
-    Created on : 31-ene-2021, 19:09:38
-    Author     : Sebastián
---%>
-
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="matilde.model.Carrito"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,6 +9,7 @@
         <link href="Styles/css/sections.css" rel="stylesheet" type="text/css"/>
         <link href="Styles/css/footer.css" rel="stylesheet" type="text/css"/>
         <link href="Styles/css/sin-flechas-number.css" rel="stylesheet" type="text/css"/>
+        <script src="Scripts/JQuery/JQuery.js" type="text/javascript"></script>
         <title>Carrito</title>
     </head>
     <body>
@@ -38,15 +34,20 @@
                                 <tbody>
                                     <%
                                         List<Carrito> lstcarrito = (List<Carrito>)request.getAttribute("lstcarrito");
+                                        DecimalFormat df = new DecimalFormat("0.00");
                                         for(Carrito objcar:lstcarrito){
                                     %>
                                     <tr>
-                                        <th scope="row">1</th>
+                                        <th scope="row"><%=objcar.getItem()%></th>
                                         <td><%=objcar.getNombre()%></td>
-                                        <td>S/. 75.00</td>
-                                        <td><input class="form-control" type="number" value="1"></td>
-                                        <td>S/. 75.00</td>
-                                        <td><a class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                                        <td>S/.<%=df.format(objcar.getPrecioCompra())%></td>
+                                        <td><input class="form-control" type="number" value="<%=objcar.getCantidad()%>"></td>
+                                        <td>S/.<%=df.format(objcar.getSubTotal())%></td>
+                                        <td>
+                                            <input type="hidden" id="us" value="<%=request.getAttribute("user")%>">
+                                            <input type="hidden" id="idp" value="<%=objcar.getIdprod()%>">
+                                            <a class="btn btn-danger" id="btnEliminar"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                        </td>
                                     </tr>
                                     <%
                                         }
@@ -62,11 +63,11 @@
                             </div>
                             <div class="card-body">
                                 <label>Subtotal:</label>
-                                <input class="form-control" readonly="" type="text" value="">
+                                <input class="form-control" readonly="" type="text" value="S/.<%=df.format(request.getAttribute("totalpagar"))%>">
                                 <label>Descuento:</label>
                                 <input class="form-control" readonly="" type="text" value="">
                                 <label>Total:</label>
-                                <input class="form-control" readonly="" type="text" value="">
+                                <input class="form-control" readonly="" type="text" value="S/.<%=df.format(request.getAttribute("totalpagar"))%>">
                             </div>
                             <div class="card-footer">
                                 <a class="btn btn-success w-100">Realizar pago <i class="fa fa-money" aria-hidden="true"></i></a>
@@ -75,10 +76,10 @@
                         </div>
                     </div>
                 </div>
-
             </section>
-
         </div>
         <%@include file="footer.jsp"%>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="Scripts/js/EliminarProductoCarrito.js" type="text/javascript"></script>
     </body>
 </html>

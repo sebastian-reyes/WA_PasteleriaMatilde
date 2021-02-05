@@ -18,6 +18,13 @@
         <section>
             <div class="container mt-3 mb-4">
                 <h1 class="text-center"><%=nombre.toString()%></h1>
+                <%
+                    if(request.getAttribute("cantidad")!=null){
+                %>
+                <h4><%=request.getAttribute("cantidad")%></h4>
+                <%
+                    }
+                %>
                 <h5 class="text-muted">Lo mejor sobre <%=nombre.toString()%> lo tienes aquí, en la pastelería Doña Matilde!</h5>
                 <div class="row">
                     <%
@@ -31,40 +38,34 @@
                             <div class="card-body">
                                 <center>
                                     <h3>S/. <%=df.format(objprod.getPrecio())%></h3>
-                                    <form method="POST" action="AgregarCarrito">
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#<%=objprod.getId_producto()%>">
-                                            <i class="fa fa-info" aria-hidden="true"></i> Información
-                                        </button>
-                                        <!-- Modal -->
-                                        <div class="modal fade " id="<%=objprod.getId_producto()%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-lg">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel"><%=objprod.getNombre()%></h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="row p-3">
-                                                            <div class="col-lg-6">
-                                                                <img src="<%=objprod.getRuta_img()%>" class="img-fluid shadow-lg bg-white rounded">
-                                                            </div>
-                                                            <div class="col-lg-6">
-                                                                <h5 class="modal-title" id="exampleModalLabel">Código: <%=objprod.getId_producto()%></h5>
-                                                                <p class="text-muted mt-2"><%=objprod.getDescripcion()%></p>
-                                                                <p>Stock: <%=objprod.getStock_actual()%></p>
-                                                            </div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#<%=objprod.getId_producto()%>">
+                                        <i class="fa fa-info" aria-hidden="true"></i> Información
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade " id="<%=objprod.getId_producto()%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel"><%=objprod.getNombre()%></h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row p-3">
+                                                        <div class="col-lg-6">
+                                                            <img src="<%=objprod.getRuta_img()%>" class="img-fluid shadow-lg bg-white rounded">
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Código: <%=objprod.getId_producto()%></h5>
+                                                            <p class="text-muted mt-2"><%=objprod.getDescripcion()%></p>
+                                                            <p>Stock: <%=objprod.getStock_actual()%></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <input type="hidden" name="user" id="user" value="<%=request.getAttribute("user")%>">
-                                        <input type="hidden" name="idp" id="idp" value="<%=objprod.getId_producto()%>">
-                                        <input type="hidden" name="idcat" id="idcat" value="<%=objprod.getId_cat()%>">
-                                        <input type="hidden" name="nomcat" id="nomcat" value="<%=request.getAttribute("nomcat")%>">
-                                        <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i> Agregar al carrito</button>
-                                    </form>  
+                                    </div>
+                                    <a href="Car?action=Agregar&idcat=<%=objprod.getId_cat()%>&id=<%=objprod.getId_producto()%>&nomcat=<%=request.getAttribute("nomcat")%>&us=<%=request.getAttribute("user")%>" class="btn btn-success"><i class="fa fa-shopping-cart"></i> Agregar al carrito</a>
                                 </center>
                             </div>
                         </div>
