@@ -23,8 +23,8 @@
                 <div class="main__container">
                     <div class="main__title">
                         <div class="main__greeting">
-                            <h1>Mantenimiento de Clientes</h1>
-                            <p>Se puede actualizar crear, actualizar y eliminar clientes</p>
+                            <h1>Mantenimiento de Empleados</h1>
+                            <p>Se puede actualizar crear, actualizar y eliminar empleados</p>
                         </div>
                         <div class="main__greeting ms-auto">
                             <a href="#" class="btn btn-primary">Ver reporte de empleados</a><br>

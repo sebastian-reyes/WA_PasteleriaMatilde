@@ -18,13 +18,6 @@
         <section>
             <div class="container mt-3 mb-4">
                 <h1 class="text-center"><%=nombre.toString()%></h1>
-                <%
-                    if(request.getAttribute("cantidad")!=null){
-                %>
-                <h4><%=request.getAttribute("cantidad")%></h4>
-                <%
-                    }
-                %>
                 <h5 class="text-muted">Lo mejor sobre <%=nombre.toString()%> lo tienes aquí, en la pastelería Doña Matilde!</h5>
                 <div class="row">
                     <%

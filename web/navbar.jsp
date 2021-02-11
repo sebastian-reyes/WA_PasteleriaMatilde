@@ -30,7 +30,7 @@
                         <ion-icon name="person-outline"></ion-icon><%=user%>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
+                        <li><a class="dropdown-item" href="Perfil?u=<%=user%>">Mi Perfil</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="CerrarSesion">Cerrar Sesión</a></li>
                     </ul>

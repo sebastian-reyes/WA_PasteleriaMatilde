@@ -91,11 +91,22 @@
         </div>
         <%
             }
+            if(request.getAttribute("lsroveedor")!= null){
+        %>
+        <div class="sidebar__link active_menu_link">
+            <i class="fa fa-truck"></i>
+            <a href="Proveedores">Mant. Proveedores</a>
+        </div>
+        <%
+            }else{
         %>
         <div class="sidebar__link">
             <i class="fa fa-truck"></i>
-            <a href="#">Mant. Proveedores</a>
+            <a href="Proveedores">Mant. Proveedores</a>
         </div>
+        <%
+            }
+        %>
         <h2>ALMACÉN</h2>
         <div class="sidebar__link">
             <i class="fa fa-sign-in"></i>
