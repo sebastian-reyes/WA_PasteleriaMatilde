@@ -32,10 +32,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <%
-                                        List<Carrito> lstcarrito = (List<Carrito>)request.getAttribute("lstcarrito");
+                                    <%                                        List<Carrito> lstcarrito = (List<Carrito>) request.getAttribute("lstcarrito");
                                         DecimalFormat df = new DecimalFormat("0.00");
-                                        for(Carrito objcar:lstcarrito){
+                                        for (Carrito objcar : lstcarrito) {
                                     %>
                                     <tr>
                                         <th scope="row"><%=objcar.getItem()%></th>
@@ -70,8 +69,27 @@
                                 <input class="form-control" readonly="" type="text" value="S/.<%=df.format(request.getAttribute("totalpagar"))%>">
                             </div>
                             <div class="card-footer">
-                                <a class="btn btn-success w-100">Generar compra <i class="fa fa-money" aria-hidden="true"></i></a>
-                                
+                                <button type="button" class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Realizar Compra <i class="fa fa-money" aria-hidden="true"></i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Formulario de compra</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary">Realizar compra</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
