@@ -107,12 +107,12 @@
                                     <th scope="col">Apellido Paterno</th>
                                     <th scope="col">Apellido Materno</th>
                                     <th scope="col">Usuario</th>
+                                    <th scope="col">Pedidos</th>
                                     <th scope="col">Actualizar</th>
                                     <th scope="col">Eliminar</th>
                                 </tr>
                             </thead>
-                            <%
-                                List<Usuario> lstcliente = (List<Usuario>) request.getAttribute("lstcliente");
+                            <%                                List<Usuario> lstcliente = (List<Usuario>) request.getAttribute("lstcliente");
                             %>
                             <tbody>
                                 <%
@@ -124,6 +124,9 @@
                                     <td><%=objcliente.getApellido_paterno()%></td>
                                     <td><%=objcliente.getApellido_materno()%></td>
                                     <td><%=objcliente.getUsername()%></td>
+                                    <td>
+                                        <a class="btn btn-outline-dark" href="Pedidos?cli=<%=objcliente.getUsername()%>">Ver Pedidos</a>
+                                    </td>
                                     <td>
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#<%=objcliente.getUsername()%>">

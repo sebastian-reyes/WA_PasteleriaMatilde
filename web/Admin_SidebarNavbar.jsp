@@ -28,14 +28,14 @@
 
     <div class="sidebar__menu">
         <%
-            if(request.getAttribute("nuser")!=null){
+            if (request.getAttribute("nuser") != null) {
         %>
         <div class="sidebar__link active_menu_link">
             <i class="fa fa-home"></i>
             <a href="Home">Inicio</a>
         </div>
         <%
-            }else{
+        } else {
         %>
         <div class="sidebar__link">
             <i class="fa fa-home"></i>
@@ -46,14 +46,15 @@
         %>
         <h2>MANTENIMIENTO</h2>
         <%
-            if(request.getAttribute("lstcliente")!=null){
+            if (request.getAttribute("lstcliente") != null || request.getAttribute("lstpedidos") != null
+                    || request.getAttribute("lstpedidos") != null) {
         %>
         <div class="sidebar__link active_menu_link">
             <i class="fa fa-users" aria-hidden="true"></i>
             <a href="Clientes">Mant. Clientes</a>
         </div>
         <%
-            }else{
+        } else {
         %>
         <div class="sidebar__link">
             <i class="fa fa-users" aria-hidden="true"></i>
@@ -61,14 +62,14 @@
         </div>
         <%
             }
-            if(request.getAttribute("lstemp")!=null){
+            if (request.getAttribute("lstemp") != null) {
         %>
         <div class="sidebar__link active_menu_link">
             <i class="fa fa-address-card-o"></i>
             <a href="Empleados">Mant. Empleados</a>
         </div>
         <%
-            }else{
+        } else {
         %>
         <div class="sidebar__link">
             <i class="fa fa-address-card-o"></i>
@@ -76,14 +77,14 @@
         </div>
         <%
             }
-            if(request.getAttribute("lstcat")!=null || request.getAttribute("lstprod")!=null){
+            if (request.getAttribute("lstcat") != null || request.getAttribute("lstprod") != null) {
         %>
         <div class="sidebar__link active_menu_link">
             <i class="fa fa-shopping-cart"></i>
             <a href="AdmCategorias">Mant. Productos</a>
         </div>
         <%
-            }else{
+        } else {
         %>
         <div class="sidebar__link">
             <i class="fa fa-shopping-cart"></i>
@@ -91,14 +92,14 @@
         </div>
         <%
             }
-            if(request.getAttribute("lsroveedor")!= null){
+            if (request.getAttribute("lsroveedor") != null) {
         %>
         <div class="sidebar__link active_menu_link">
             <i class="fa fa-truck"></i>
             <a href="Proveedores">Mant. Proveedores</a>
         </div>
         <%
-            }else{
+        } else {
         %>
         <div class="sidebar__link">
             <i class="fa fa-truck"></i>

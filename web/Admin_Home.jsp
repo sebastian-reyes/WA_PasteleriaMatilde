@@ -94,7 +94,7 @@
 
                                 <div class="card3">
                                     <h1>Usuarios</h1>
-                                    <p>25</p>
+                                    <p><%=nuser%></p>
                                 </div>
 
                                 <div class="card4">

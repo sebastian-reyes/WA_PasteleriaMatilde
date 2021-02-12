@@ -12,7 +12,6 @@
     </head>
     <body>
         <%@include file="navbar.jsp" %>
-        <%@include file="btn-carrito.jsp" %>
         <section id="fondo-home" style="background-image: url('img/index/fondo-home.jpg');">
             <div class="container">
                 <div class="content-center">
@@ -28,7 +27,22 @@
                             de tu casa. ¿Qué esperas para comprar la torta de tus sueños?
                         </b>
                     </p>
-                    <a href="Categoria" class="btm btm-ligth mt-3 text-dark" style=" text-decoration: none;box-shadow: 12px 12px 22px #000000;"><b>Empieza a comprar <ion-icon name="pricetag-outline"></ion-icon></b></a>
+
+                    <%                            if (request.getAttribute("user") != null) {
+                            String user = (String) request.getAttribute("user");
+                    %>
+                    <%@include file="btn-carrito.jsp" %>
+                    <form action="Categorias" method="POST">
+                        <input type="hidden" value="<%=user%>" name="user" id="user">
+                        <button class="btm btm-ligth mt-3 text-dark" style=" text-decoration: none;box-shadow: 12px 12px 22px #000000;"><b>Empieza a comprar <ion-icon name="pricetag-outline"></ion-icon></b></button>
+                    </form>
+                    <%
+                    } else {
+                    %>
+                    <a href="Registro" class="btm btm-ligth mt-3 text-dark" style=" text-decoration: none;box-shadow: 12px 12px 22px #000000;"><b>Registrate para poder comprar <ion-icon name="person-outline"></ion-icon></b></a>
+                    <%
+                        }
+                    %> 
                 </div>
             </div>
         </section>

@@ -70,8 +70,8 @@
                                 <input class="form-control" readonly="" type="text" value="S/.<%=df.format(request.getAttribute("totalpagar"))%>">
                             </div>
                             <div class="card-footer">
-                                <a class="btn btn-success w-100">Realizar pago <i class="fa fa-money" aria-hidden="true"></i></a>
-                                <a class="btn btn-primary w-100 mt-2">Generar Compra <i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+                                <a class="btn btn-success w-100">Generar compra <i class="fa fa-money" aria-hidden="true"></i></a>
+                                
                             </div>
                         </div>
                     </div>

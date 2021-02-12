@@ -14,10 +14,10 @@
                         String user = request.getAttribute("user").toString();
                 %>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#sobre-nosotros"><ion-icon name="help-circle-outline"></ion-icon> Sobre Nosotros</a>
+                    <a class="nav-link active" aria-current="page" href="Index?user=<%=user%>"><ion-icon name="help-circle-outline"></ion-icon> Sobre Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#contacto"><ion-icon name="call-outline"></ion-icon> Contacto</a>
+                    <a class="nav-link active" aria-current="page" href="Index?user=<%=user%>"><ion-icon name="call-outline"></ion-icon> Contacto</a>
                 </li>
                 <li class="nav-item">
                     <form action="Categorias" method="POST">
