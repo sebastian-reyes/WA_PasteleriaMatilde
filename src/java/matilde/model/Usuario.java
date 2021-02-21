@@ -21,8 +21,9 @@ public class Usuario {
     String telefono;
     String email;
     String dni;
+    String direccion;
 
-    public Usuario(String id_usuario, String id_rol, String username, String password, String nombres, String apellido_paterno, String apellido_materno, String telefono, String email, String dni) {
+    public Usuario(String id_usuario, String id_rol, String username, String password, String nombres, String apellido_paterno, String apellido_materno, String telefono, String email, String dni, String direccion) {
         this.id_usuario = id_usuario;
         this.id_rol = id_rol;
         this.username = username;
@@ -33,6 +34,7 @@ public class Usuario {
         this.telefono = telefono;
         this.email = email;
         this.dni = dni;
+        this.direccion = direccion;
     }
 
     public Usuario() {
@@ -117,7 +119,14 @@ public class Usuario {
     public void setDni(String dni) {
         this.dni = dni;
     }
-    
-    
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
     
 }

@@ -87,13 +87,14 @@ public class Registrar extends HttpServlet {
         String telefono = request.getParameter("txttelefono");
         String email = request.getParameter("txtemail");
         String dni = request.getParameter("txtdni");
+        String direccion = request.getParameter("direccion");
         
         String respuesta ="";
         String vista;
         String color;
         boolean resultado = false;
         
-        Usuario objusuario = new Usuario(id,rol,user,password,nombres,ap_pat,ap_mat,telefono,email,dni);
+        Usuario objusuario = new Usuario(id,rol,user,password,nombres,ap_pat,ap_mat,telefono,email,dni,direccion);
         resultado = new UsuarioDao().RegistrarUsuario(objusuario);
         
         if(resultado == false){

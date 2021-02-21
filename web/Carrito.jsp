@@ -138,15 +138,8 @@
                                                                     </div>
                                                                     <div class="col-md-7 mb-3">
                                                                         <label for="direccion">Dirección</label>
-                                                                        <input type="text" class="form-control" id="direccion" name="direccion">
+                                                                        <input type="text" class="form-control" id="direccion" name="direccion" value="<%=objusuario.getDireccion()%>">
                                                                         <input type="hidden" class="form-control" id="coduser" name="coduser" value="<%=objusuario.getId_usuario()%>">
-                                                                    </div>
-                                                                    <div class="col-md-5 mb-3">
-                                                                        <label for="txtdocumento">Distrito</label>
-                                                                        <select id="inputState" class="form-select">
-                                                                            <option>Breña</option>
-                                                                            <option>La Victoria</option>
-                                                                        </select>
                                                                     </div>
                                                                     <div class="col-md-12 mb-3">
                                                                         <label for="txtdocumento">Tipo Documento</label>
@@ -163,7 +156,7 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                                                     <input type="hidden" class="form-control" id="user" name="user" value="<%=objusuario.getUsername()%>">
-                                                    <button type="submit" class="btn btn-primary">Realizar compra</button>
+                                                    <a href="Car?action=GenerarCompra&user=<%=objusuario.getUsername()%>&coduser=<%=objusuario.getId_usuario()%>&direccion=<%=objusuario.getDireccion()%>" class="btn btn-primary">Realizar compra</a>
                                                 </div>
                                             </form>
                                         </div>

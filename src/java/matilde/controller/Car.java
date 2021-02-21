@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import matilde.dao.DetPdoVta;
 import matilde.dao.PdoVtaDao;
 import matilde.dao.ProductoDao;
 import matilde.dao.UsuarioDao;
@@ -38,7 +39,7 @@ public class Car extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
-        
+
         int cantidad = 1;
         String user = request.getParameter("us");
         switch (action) {
@@ -107,13 +108,22 @@ public class Car extends HttpServlet {
                 for (int i = 0; i < lstcarrito.size(); i++) {
                     if (lstcarrito.get(i).getItem() == idpro) {
                         lstcarrito.get(i).setCantidad(cant);
-                        double st = lstcarrito.get(i).getPrecioCompra()*cant;
+                        double st = lstcarrito.get(i).getPrecioCompra() * cant;
                         lstcarrito.get(i).setSubTotal(st);
                     }
                 }
                 break;
             case "GenerarCompra":
-                
+                String user_compra = request.getParameter("user");
+                String coduser = request.getParameter("coduser");
+                String direccion = request.getParameter("direccion");
+
+                boolean res = new PdoVtaDao().realizarPedido(coduser, direccion);
+                response.sendRedirect("Index?user=" + user_compra);
+                for (Carrito objcar: lstcarrito){
+                    boolean res2 = new DetPdoVta().registrarDetalleVenta(objcar);
+                }
+                lstcarrito.clear();
                 break;
             case "Carrito":
                 String ultimo_ped = new PdoVtaDao().ultimoped();

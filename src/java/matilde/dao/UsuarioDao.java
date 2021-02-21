@@ -21,7 +21,7 @@ import matilde.model.Usuario;
  * @author Sebastián
  */
 public class UsuarioDao implements I_UsuarioDao {
-
+    
     @Override
     public Usuario validarUsuario(String user, String password) {
         BDConnection objconex = new BDConnection();
@@ -42,25 +42,26 @@ public class UsuarioDao implements I_UsuarioDao {
                         result.getString(7),
                         result.getString(8),
                         result.getString(9),
-                        result.getString(10));
+                        result.getString(10),
+                        result.getString(11));
             }
             result.close();
             prepared.close();
             objconex.Desconectar();
         } catch (SQLException ex) {
-
+            
         }
         return objusuario;
     }
-
+    
     @Override
     public boolean RegistrarUsuario(Usuario objusuario) {
         BDConnection objconex = new BDConnection();
         Connection conex = objconex.Conectar();
         Boolean respuesta = false;
-
+        
         try {
-            PreparedStatement prepared = conex.prepareStatement("{call sp_RegistarCliente(?,?,?,?,?,?,?,?)}");
+            PreparedStatement prepared = conex.prepareStatement("{call sp_RegistarCliente(?,?,?,?,?,?,?,?,?)}");
             prepared.setString(1, objusuario.getUsername());
             prepared.setString(2, objusuario.getPassword());
             prepared.setString(3, objusuario.getNombres());
@@ -69,15 +70,16 @@ public class UsuarioDao implements I_UsuarioDao {
             prepared.setString(6, objusuario.getTelefono());
             prepared.setString(7, objusuario.getEmail());
             prepared.setString(8, objusuario.getDni());
+            prepared.setString(9, objusuario.getDireccion());
             prepared.execute();
             prepared.close();
             objconex.Desconectar();
         } catch (SQLException ex) {
-
+            
         }
         return respuesta;
     }
-
+    
     @Override
     public Usuario obtenerUsuario(String coduser) {
         BDConnection objconex = new BDConnection();
@@ -97,17 +99,18 @@ public class UsuarioDao implements I_UsuarioDao {
                         result.getString(7),
                         result.getString(8),
                         result.getString(9),
-                        result.getString(10));
+                        result.getString(10),
+                        result.getString(11));
             }
             result.close();
             prepared.close();
             objconex.Desconectar();
         } catch (SQLException ex) {
-
+            
         }
         return objusuario;
     }
-
+    
     @Override
     public List<Usuario> listarCliente() {
         List<Usuario> lstcliente = new ArrayList<Usuario>();
@@ -126,15 +129,15 @@ public class UsuarioDao implements I_UsuarioDao {
                         resultado.getString(7),
                         resultado.getString(8),
                         resultado.getString(9),
-                        resultado.getString(10)
-                ));
+                        resultado.getString(10),
+                        resultado.getString(11)));
             }
         } catch (SQLException ex) {
-
+            
         }
         return lstcliente;
     }
-
+    
     @Override
     public List<Usuario> listarEmpleado() {
         List<Usuario> lstempleado = new ArrayList<Usuario>();
@@ -153,15 +156,16 @@ public class UsuarioDao implements I_UsuarioDao {
                         resultado.getString(7),
                         resultado.getString(8),
                         resultado.getString(9),
-                        resultado.getString(10)
+                        resultado.getString(10),
+                        resultado.getString(11)
                 ));
             }
         } catch (SQLException ex) {
-
+            
         }
         return lstempleado;
     }
-
+    
     @Override
     public boolean eliminarUsuario(String id) {
         BDConnection objconex = new BDConnection();
@@ -175,17 +179,17 @@ public class UsuarioDao implements I_UsuarioDao {
             prepared.close();
             objconex.Desconectar();
         } catch (SQLException ex) {
-
+            
         }
         return respuesta;
     }
-
+    
     @Override
     public boolean RegistrarEmpleado(Usuario objusuario) {
         BDConnection objconex = new BDConnection();
         Connection conex = objconex.Conectar();
         Boolean respuesta = false;
-
+        
         try {
             PreparedStatement prepared = conex.prepareStatement("{call sp_RegistarEmpleado(?,?,?,?,?,?,?,?)}");
             prepared.setString(1, objusuario.getUsername());
@@ -200,32 +204,33 @@ public class UsuarioDao implements I_UsuarioDao {
             prepared.close();
             objconex.Desconectar();
         } catch (SQLException ex) {
-
+            
         }
         return respuesta;
     }
-
+    
     @Override
     public int contarUsuarios() {
         int nuser = 0;
         BDConnection objconex = new BDConnection();
         Connection conex = objconex.Conectar();
-        try{
+        try {
             Statement statement = conex.createStatement();
             ResultSet resultado = statement.executeQuery("{CALL sp_ListarClientes()}");
-            while(resultado.next()){
+            while (resultado.next()) {
                 nuser++;
             }
-        }catch(SQLException ex){}
+        } catch (SQLException ex) {
+        }
         return nuser;
     }
-
+    
     @Override
     public boolean ActualizarUsuario(Usuario objusuario, String conf_pass) {
         BDConnection objconex = new BDConnection();
         Connection conex = objconex.Conectar();
         Boolean respuesta = false;
-
+        
         try {
             PreparedStatement prepared = conex.prepareStatement("{call sp_EditarUsuario(?,?,?,?,?,?,?,?,?,?)}");
             prepared.setString(1, objusuario.getId_usuario());
@@ -242,17 +247,17 @@ public class UsuarioDao implements I_UsuarioDao {
             prepared.close();
             objconex.Desconectar();
         } catch (SQLException ex) {
-
+            
         }
         return respuesta;
     }
-
+    
     @Override
     public boolean ActualizarEmpleado(Usuario objusuario, String conf_pass) {
         BDConnection objconex = new BDConnection();
         Connection conex = objconex.Conectar();
         Boolean respuesta = false;
-
+        
         try {
             PreparedStatement prepared = conex.prepareStatement("{call sp_EditarEmpleado(?,?,?,?,?,?,?,?,?,?)}");
             prepared.setString(1, objusuario.getId_usuario());
@@ -269,11 +274,11 @@ public class UsuarioDao implements I_UsuarioDao {
             prepared.close();
             objconex.Desconectar();
         } catch (SQLException ex) {
-
+            
         }
         return respuesta;
     }
-
+    
     @Override
     public Usuario validarEmpleado(String user, String password) {
         BDConnection objconex = new BDConnection();
@@ -294,15 +299,16 @@ public class UsuarioDao implements I_UsuarioDao {
                         result.getString(7),
                         result.getString(8),
                         result.getString(9),
-                        result.getString(10));
+                        result.getString(10),
+                        result.getString(11));
             }
             result.close();
             prepared.close();
             objconex.Desconectar();
         } catch (SQLException ex) {
-
+            
         }
         return objusuario;
     }
-
+    
 }

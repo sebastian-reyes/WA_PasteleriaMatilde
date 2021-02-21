@@ -13,9 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 import matilde.bd.BDConnection;
 import matilde.idao.I_DetPdoVta;
+import matilde.model.Carrito;
 import matilde.model.Detalle_Pedido_Venta;
 
-public class DetPdoVta implements I_DetPdoVta{
+public class DetPdoVta implements I_DetPdoVta {
 
     @Override
     public List<Detalle_Pedido_Venta> listarDetallePedido(String idpedido) {
@@ -37,9 +38,28 @@ public class DetPdoVta implements I_DetPdoVta{
             prepared.close();
             objconex.Desconectar();
         } catch (SQLException ex) {
-            
+
         }
         return lstdetalle;
     }
-    
+
+    @Override
+    public boolean registrarDetalleVenta(Carrito objcarrito) {
+        BDConnection objconex = new BDConnection();
+        Connection conex = objconex.Conectar();
+        Boolean respuesta = false;
+        try {
+            PreparedStatement prepared = conex.prepareStatement("{call sp_registrarDetalle(?,?,?)}");
+            prepared.setString(1, objcarrito.getIdprod());
+            prepared.setInt(2, objcarrito.getCantidad());
+            prepared.setDouble(3, objcarrito.getPrecioCompra());
+            prepared.execute();
+            prepared.close();
+            objconex.Desconectar();
+        } catch (SQLException ex) {
+
+        }
+        return respuesta;
+    }
+
 }

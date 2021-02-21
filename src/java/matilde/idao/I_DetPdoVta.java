@@ -6,6 +6,7 @@
 package matilde.idao;
 
 import java.util.List;
+import matilde.model.Carrito;
 import matilde.model.Detalle_Pedido_Venta;
 
 /**
@@ -13,7 +14,7 @@ import matilde.model.Detalle_Pedido_Venta;
  * @author Sebastián
  */
 public interface I_DetPdoVta {
-   
-   public List<Detalle_Pedido_Venta> listarDetallePedido(String idpedido);
-    
+
+    public List<Detalle_Pedido_Venta> listarDetallePedido(String idpedido);
+    public boolean registrarDetalleVenta (Carrito objcarrito);
 }

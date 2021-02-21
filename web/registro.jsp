@@ -42,9 +42,15 @@
                                 <input type="text" class="form-control" id="txtapmat" name="txtapmat">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="txtemail">Correo electrónico</label>
-                            <input type="email" class="form-control" id="txtemail" name="txtemail">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="txtemail">Correo electrónico</label>
+                                <input type="email" class="form-control" id="txtemail" name="txtemail">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="direccion">Dirección:</label>
+                                <input type="text" class="form-control" id="direccion" name="direccion">
+                            </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -62,6 +68,7 @@
                                 <input type="text" class="form-control" id="txtdni" name="txtdni">
                             </div>
                         </div>
+
                         <div class="form-group">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="gridCheck">
