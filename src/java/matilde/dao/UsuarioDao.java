@@ -274,4 +274,35 @@ public class UsuarioDao implements I_UsuarioDao {
         return respuesta;
     }
 
+    @Override
+    public Usuario validarEmpleado(String user, String password) {
+        BDConnection objconex = new BDConnection();
+        Connection conex = objconex.Conectar();
+        Usuario objusuario = null;
+        try {
+            PreparedStatement prepared = conex.prepareCall("{call sp_VerificarRepartidor(?,?)}");
+            prepared.setString(1, user);
+            prepared.setString(2, password);
+            ResultSet result = prepared.executeQuery();
+            if (result.next()) {
+                objusuario = new Usuario(result.getString(1),
+                        result.getString(2),
+                        result.getString(3),
+                        result.getString(4),
+                        result.getString(5),
+                        result.getString(6),
+                        result.getString(7),
+                        result.getString(8),
+                        result.getString(9),
+                        result.getString(10));
+            }
+            result.close();
+            prepared.close();
+            objconex.Desconectar();
+        } catch (SQLException ex) {
+
+        }
+        return objusuario;
+    }
+
 }

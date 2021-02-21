@@ -15,9 +15,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import matilde.dao.PdoVtaDao;
 import matilde.dao.ProductoDao;
+import matilde.dao.UsuarioDao;
 import matilde.model.Carrito;
 import matilde.model.Producto;
+import matilde.model.Usuario;
 
 /**
  *
@@ -35,7 +38,7 @@ public class Car extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
-
+        
         int cantidad = 1;
         String user = request.getParameter("us");
         switch (action) {
@@ -97,10 +100,29 @@ public class Car extends HttpServlet {
                     }
                 }
                 break;
+
+            case "ActualizarCantidad":
+                int idpro = Integer.parseInt(request.getParameter("idp"));
+                int cant = Integer.parseInt(request.getParameter("cantidad"));
+                for (int i = 0; i < lstcarrito.size(); i++) {
+                    if (lstcarrito.get(i).getItem() == idpro) {
+                        lstcarrito.get(i).setCantidad(cant);
+                        double st = lstcarrito.get(i).getPrecioCompra()*cant;
+                        lstcarrito.get(i).setSubTotal(st);
+                    }
+                }
+                break;
+            case "GenerarCompra":
+                
+                break;
             case "Carrito":
+                String ultimo_ped = new PdoVtaDao().ultimoped();
                 totalPagar = 0.0;
                 request.setAttribute("lstcarrito", lstcarrito);
-                request.setAttribute("user", user);
+                Usuario objusuario = new UsuarioDao().obtenerUsuario(user);
+                request.setAttribute("ultimo", ultimo_ped);
+                request.setAttribute("user", objusuario.getUsername());
+                request.setAttribute("objusuario", objusuario);
                 for (int i = 0; i < lstcarrito.size(); i++) {
                     totalPagar = totalPagar + lstcarrito.get(i).getSubTotal();
                 }

@@ -106,6 +106,7 @@
                                     <th scope="col">Apellido Paterno</th>
                                     <th scope="col">Apellido Materno</th>
                                     <th scope="col">Usuario</th>
+                                    <th>Entregas</th>
                                     <th scope="col">Actualizar</th>
                                     <th scope="col">Eliminar</th>
                                 </tr>
@@ -123,6 +124,7 @@
                                     <td><%=objcliente.getApellido_paterno()%></td>
                                     <td><%=objcliente.getApellido_materno()%></td>
                                     <td><%=objcliente.getUsername()%></td>
+                                    <td><a class="btn btn-outline-dark">Ver entregas</a></td>
                                     <td>
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#<%=objcliente.getUsername()%>">

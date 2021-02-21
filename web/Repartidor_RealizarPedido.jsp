@@ -1,4 +1,5 @@
 <%@page import="matilde.model.Detalle_Pedido_Venta"%>
+<%@page import="matilde.model.Pedido_Venta"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,18 +18,24 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body id="body">
+        <%
+            List<Detalle_Pedido_Venta> lstdetalle = (List<Detalle_Pedido_Venta>) request.getAttribute("lstdetalle");
+        %>
         <div class="container-admin">
-            <%@include file="Admin_SidebarNavbar.jsp" %>
+            <%@include file="Repartidor_Sidebar.jsp" %>
             <main>
                 <div class="main__container">
                     <div class="main__title">
                         <div class="main__greeting">
-                            <h1>Pedido</h1>
-                            <p>Se puede actualizar crear, actualizar y eliminar clientes</p>
+                            <h1>Pedido <%=request.getAttribute("id")%></h1>
+
+                            <h1>Cliente: <%=request.getAttribute("cliente")%></h1>
+                            <h1>Dirección: <%=request.getAttribute("direccion")%></h1>
+
                         </div>
                     </div>
-                    <a class="btn btn-dark" href="Clientes">Regresar</a>
-                    <div class="container">
+                    <div class="container mt-2">
+                        <h2>Detalle del pedido</h2>
                         <div class="table-responsive">
                             <table class="table table-hover shadow-lg p-3 mb-5 mt-4 bg-white rounded">
                                 <thead class="table-dark">
@@ -39,8 +46,6 @@
                                         <th scope="col">Monto</th>
                                     </tr>
                                 </thead>
-                                <%                                    List<Detalle_Pedido_Venta> lstdetalle = (List<Detalle_Pedido_Venta>) request.getAttribute("lstdetalle");
-                                %>
                                 <tbody>
                                     <%
                                         double total = 0.0;
@@ -65,12 +70,16 @@
                                 </tfoot>
                             </table>
                         </div>
+                        <form method="POST" action="Entregado">
+                            <<input type="hidden" id="ped" name="ped" value="<%=request.getAttribute("id")%>">
+                            <button class="btn btn-success w-100">Entregado <i class="fa fa-check-square" aria-hidden="true"></i></button>
+                        </form>
                     </div>
                 </div>
             </main>
         </div>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script src="Scripts/js/EliminarCliente.js" type="text/javascript"></script>
+        <script src="Scripts/js/EliminarEmpleado.js" type="text/javascript"></script> 
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         <script src="Scripts/js/admin_scripts.js"></script>
         <script src="Scripts/Bootstrap/bootstrap.min.js" type="text/javascript"></script>

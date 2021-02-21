@@ -7,22 +7,48 @@ package matilde.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import matilde.dao.UsuarioDao;
-import matilde.model.Usuario;
+import matilde.dao.PdoVtaDao;
+import matilde.model.Carrito;
 
 /**
  *
  * @author Sebastián
  */
-@WebServlet(name = "Autenticacion", urlPatterns = {"/Autenticacion"})
-public class Autenticacion extends HttpServlet {
+@WebServlet(name = "RealizarCompra", urlPatterns = {"/RealizarCompra"})
+public class RealizarCompra extends HttpServlet {
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet RealizarCompra</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet RealizarCompra at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -36,6 +62,7 @@ public class Autenticacion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        processRequest(request, response);
     }
 
     /**
@@ -49,39 +76,12 @@ public class Autenticacion extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-
-        String user = request.getParameter("txtusuario");
-        String password = request.getParameter("txtpassword");
-        String color;
-        String vista;
-        String respuesta = "";
-        Usuario objusuario = new UsuarioDao().validarUsuario(user, password);
-        Usuario objusuarioemp = new UsuarioDao().validarEmpleado(user, password);
-
-        if (objusuario != null) {
-            vista = "/index.jsp";
-            color = "success";
-            session.setAttribute("sesion", objusuario);
-        } else if (user.equals("admin") && password.equals("admin-contra")) {
-            int nuser = new UsuarioDao().contarUsuarios();
-            vista = "/Admin_Home.jsp";
-            color = "success";
-            request.setAttribute("nuser", nuser);
-        } else if (objusuarioemp != null) {
-            vista = "/Repartidor_Home.jsp";
-            color = "success";
-            session.setAttribute("sesion", objusuarioemp);
-        } else {
-            respuesta = "Error al iniciar sesión";
-            vista = "/login.jsp";
-            color = "danger";
-        }
-        request.setAttribute("color", color);
-        request.setAttribute("user", user);
-        request.setAttribute("respuesta", respuesta);
-        RequestDispatcher dispatcher = request.getRequestDispatcher(vista);
-        dispatcher.forward(request, response);
+        String user = request.getParameter("user");
+        String coduser = request.getParameter("coduser");
+        String direccion = request.getParameter("direccion");
+        
+        boolean res = new PdoVtaDao().realizarPedido(coduser, direccion);
+        response.sendRedirect("Index?user="+user);
     }
 
     /**

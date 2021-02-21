@@ -14,4 +14,9 @@ import matilde.model.Pedido_Venta;
  */
 public interface I_PdoVta {
     public List<Pedido_Venta> litarPedidtos(String id);
+    public List<Pedido_Venta> litarPedidosID(String id);
+    public List<Pedido_Venta> litarPedidtosNoEntregados();
+    public boolean realizarEntrega(String coduser, String codped);
+    public boolean realizarPedido(String coduser, String direccion);
+    public String ultimoped();
 }

@@ -15,6 +15,7 @@ import matilde.model.Usuario;
 public interface I_UsuarioDao {
     public Usuario validarUsuario(String user, String password);
     public boolean RegistrarUsuario(Usuario objusuario);
+    public Usuario validarEmpleado(String user, String password);
     public boolean RegistrarEmpleado(Usuario objusuario);
     public Usuario obtenerUsuario(String coduser);
     public boolean ActualizarUsuario(Usuario objusuario, String conf_pass);
