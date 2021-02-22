@@ -89,12 +89,13 @@ public class ActualizarEmp extends HttpServlet {
         String email = request.getParameter("txtemail");
         String dni = request.getParameter("txtdni");
         String conf_pass = request.getParameter("txtconfpass");
+        String direccion = request.getParameter("direccion");
 
         String vista;
         String color;
         boolean resultado = false;
 
-        Usuario objusuario = new Usuario(id, rol, user, password, nombres, ap_pat, ap_mat, telefono, email, dni);
+        Usuario objusuario = new Usuario(id, rol, user, password, nombres, ap_pat, ap_mat, telefono, email, dni,direccion);
         resultado = new UsuarioDao().ActualizarEmpleado(objusuario, conf_pass);
         List<Usuario> lstcliente = new UsuarioDao().listarEmpleado();
         request.setAttribute("lstemp", lstcliente);

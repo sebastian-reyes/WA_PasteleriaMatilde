@@ -232,7 +232,7 @@ public class UsuarioDao implements I_UsuarioDao {
         Boolean respuesta = false;
         
         try {
-            PreparedStatement prepared = conex.prepareStatement("{call sp_EditarUsuario(?,?,?,?,?,?,?,?,?,?)}");
+            PreparedStatement prepared = conex.prepareStatement("{call sp_EditarUsuario(?,?,?,?,?,?,?,?,?,?,?)}");
             prepared.setString(1, objusuario.getId_usuario());
             prepared.setString(2, objusuario.getUsername());
             prepared.setString(3, objusuario.getPassword());
@@ -243,6 +243,7 @@ public class UsuarioDao implements I_UsuarioDao {
             prepared.setString(8, objusuario.getTelefono());
             prepared.setString(9, objusuario.getEmail());
             prepared.setString(10, objusuario.getDni());
+            prepared.setString(11, objusuario.getDireccion());
             prepared.execute();
             prepared.close();
             objconex.Desconectar();

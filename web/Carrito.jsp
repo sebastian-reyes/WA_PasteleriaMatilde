@@ -132,14 +132,18 @@
                                                             <h2 class="text-center">Pago</h2>
                                                             <div class="container">
                                                                 <div class="row">
-                                                                    <div class="col-md-12 mb-3">
+                                                                    <div class="col-md-6 mb-3">
+                                                                        <label for="cliente">ID CLIENTE</label>
+                                                                        <input type="text" class="form-control" id="coduser" name="coduser" value="<%=objusuario.getId_usuario()%>" readonly="">
+                                                                    </div>
+                                                                    <div class="col-md-6 mb-3">
                                                                         <label for="cliente">Cliente</label>
                                                                         <input type="text" class="form-control" id="cliente" name="cliente" value="<%=objusuario.getNombres()%> <%=objusuario.getApellido_paterno()%> <%=objusuario.getApellido_materno()%>" readonly="">
                                                                     </div>
-                                                                    <div class="col-md-7 mb-3">
+                                                                    <div class="col-md-12 mb-3">
                                                                         <label for="direccion">Dirección</label>
                                                                         <input type="text" class="form-control" id="direccion" name="direccion" value="<%=objusuario.getDireccion()%>">
-                                                                        <input type="hidden" class="form-control" id="coduser" name="coduser" value="<%=objusuario.getId_usuario()%>">
+                                                                        
                                                                     </div>
                                                                     <div class="col-md-12 mb-3">
                                                                         <label for="txtdocumento">Tipo Documento</label>

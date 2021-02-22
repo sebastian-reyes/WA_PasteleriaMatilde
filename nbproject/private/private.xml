@@ -4,11 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Sebastián/Desktop/Pastelería%20Doña%20Matilde/WA_PasteleriaMatilde/src/java/matilde/dao/UsuarioDao.java</file>
+            <file>file:/C:/Users/Sebastián/Desktop/Pastelería%20Doña%20Matilde/WA_PasteleriaMatilde/src/java/matilde/controller/ActualizarEmp.java</file>
             <file>file:/C:/Users/Sebastián/Desktop/Pastelería%20Doña%20Matilde/WA_PasteleriaMatilde/web/registro.jsp</file>
             <file>file:/C:/Users/Sebastián/Desktop/Pastelería%20Doña%20Matilde/WA_PasteleriaMatilde/src/java/matilde/controller/Registrar.java</file>
             <file>file:/C:/Users/Sebastián/Desktop/Pastelería%20Doña%20Matilde/WA_PasteleriaMatilde/web/Carrito.jsp</file>
             <file>file:/C:/Users/Sebastián/Desktop/Pastelería%20Doña%20Matilde/WA_PasteleriaMatilde/src/java/matilde/controller/Actualizar.java</file>
             <file>file:/C:/Users/Sebastián/Desktop/Pastelería%20Doña%20Matilde/WA_PasteleriaMatilde/src/java/matilde/model/Usuario.java</file>
+            <file>file:/C:/Users/Sebastián/Desktop/Pastelería%20Doña%20Matilde/WA_PasteleriaMatilde/web/Admin_MantCliente.jsp</file>
+            <file>file:/C:/Users/Sebastián/Desktop/Pastelería%20Doña%20Matilde/WA_PasteleriaMatilde/src/java/matilde/controller/AdmRegistrar.java</file>
+            <file>file:/C:/Users/Sebastián/Desktop/Pastelería%20Doña%20Matilde/WA_PasteleriaMatilde/src/java/matilde/controller/AdmRegistrarEmp.java</file>
         </group>
     </open-files>
 </project-private>

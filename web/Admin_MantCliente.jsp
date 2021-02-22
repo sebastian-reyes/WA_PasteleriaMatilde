@@ -87,6 +87,10 @@
                                                         <input type="text" class="form-control" id="txtdni" name="txtdni">
                                                     </div>
                                                 </div>
+                                                <div class=" mb-3">
+                                                    <label for="direccion">Direccion</label>
+                                                    <input type="direccion" class="form-control" id="direccion" name="direccion">
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
@@ -170,6 +174,10 @@
                                                             <div class=" mb-3">
                                                                 <label for="txtemail">Correo electrónico</label>
                                                                 <input type="email" class="form-control" id="txtemail" name="txtemail" value="<%=objcliente.getEmail()%>">
+                                                            </div>
+                                                            <div class=" mb-3">
+                                                                <label for="direccion">Direccion</label>
+                                                                <input type="direccion" class="form-control" id="direccion" name="direccion" value="<%=objcliente.getDireccion()%>">
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-5 mb-3">
