@@ -142,15 +142,11 @@
                                                                     </div>
                                                                     <div class="col-md-12 mb-3">
                                                                         <label for="direccion">Dirección</label>
-                                                                        <input type="text" class="form-control" id="direccion" name="direccion" value="<%=objusuario.getDireccion()%>">
-                                                                        
+                                                                        <input type="text" class="form-control" id="direccion" name="direccion" value="<%=objusuario.getDireccion()%>" readonly="">      
                                                                     </div>
                                                                     <div class="col-md-12 mb-3">
                                                                         <label for="txtdocumento">Tipo Documento</label>
-                                                                        <select id="inputState" class="form-select">
-                                                                            <option>Tarjeta</option>
-                                                                            <option selected="">Efectivo</option>
-                                                                        </select>
+                                                                        <input type="text" class="form-control" id="direccion" name="direccion" value="Efectivo" readonly="">      
                                                                     </div>
                                                                 </div>
                                                             </div>

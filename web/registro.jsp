@@ -43,13 +43,17 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-5">
                                 <label for="txtemail">Correo electrónico</label>
                                 <input type="email" class="form-control" id="txtemail" name="txtemail">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="direccion">Dirección:</label>
                                 <input type="text" class="form-control" id="direccion" name="direccion">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="distrito">Distrito:</label>
+                                <input type="text" class="form-control" id="distrito" name="distrito">
                             </div>
                         </div>
                         <div class="form-row">
@@ -68,7 +72,6 @@
                                 <input type="text" class="form-control" id="txtdni" name="txtdni">
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="gridCheck">

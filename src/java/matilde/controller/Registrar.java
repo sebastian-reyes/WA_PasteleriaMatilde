@@ -40,7 +40,7 @@ public class Registrar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Registrar</title>");            
+            out.println("<title>Servlet Registrar</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet Registrar at " + request.getContextPath() + "</h1>");
@@ -88,20 +88,23 @@ public class Registrar extends HttpServlet {
         String email = request.getParameter("txtemail");
         String dni = request.getParameter("txtdni");
         String direccion = request.getParameter("direccion");
-        
-        String respuesta ="";
+        String distrito = request.getParameter("distrito");
+
+        String dir = direccion + " - " + distrito;
+
+        String respuesta = "";
         String vista;
         String color;
         boolean resultado = false;
-        
-        Usuario objusuario = new Usuario(id,rol,user,password,nombres,ap_pat,ap_mat,telefono,email,dni,direccion);
+
+        Usuario objusuario = new Usuario(id, rol, user, password, nombres, ap_pat, ap_mat, telefono, email, dni, dir);
         resultado = new UsuarioDao().RegistrarUsuario(objusuario);
-        
-        if(resultado == false){
+
+        if (resultado == false) {
             vista = "/login.jsp";
             respuesta = "Registado correcatmente";
             color = "success";
-        }else{
+        } else {
             vista = "/registro.jsp";
             respuesta = "Error al registrarse";
             color = "danger";
